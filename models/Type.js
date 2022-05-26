@@ -1,5 +1,16 @@
 const mongoose = require('mongoose')
 
+const BrandsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    trim: true
+  },
+  image: {
+    type: String,
+    default: 'no-image.jpg'
+  }
+})
+
 const TypeSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -11,19 +22,7 @@ const TypeSchema = new mongoose.Schema({
     type: String,
     default: 'no-image.jpg'
   },
-  brands: {
-    type: [{
-      name: {
-        type: String,
-        trim: true
-      },
-      image: {
-        type: String,
-        default: 'no-image.jpg'
-      }
-    }],
-    default: []
-  }
+  brands: [BrandsSchema]
 })
 
 module.exports = mongoose.model('Type', TypeSchema)
