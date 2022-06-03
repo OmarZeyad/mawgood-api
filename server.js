@@ -12,8 +12,8 @@ const termsRouter = require('./routes/terms')
 const offersRouter = require('./routes/offers')
 
 mongoose
-  .connect(process.env.MONGODB_URI)
-  // .connect("mongodb://127.0.0.1:27017/mawgood")
+  // .connect(process.env.MONGODB_URI)
+  .connect("mongodb://127.0.0.1:27017/mawgood")
   .then(conn => {
     console.log(`MongoDB Connected: ${conn.connection.host}`)
   })

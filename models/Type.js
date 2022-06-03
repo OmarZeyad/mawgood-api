@@ -5,6 +5,7 @@ const BrandsSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  rank: Number,
   image: {
     type: String,
     default: 'no-image.jpg'
@@ -18,6 +19,7 @@ const TypeSchema = new mongoose.Schema({
     unique: [true, 'Duplicate type name'],
     trim: true
   },
+  rank: Number,
   image: {
     type: String,
     default: 'no-image.jpg'
