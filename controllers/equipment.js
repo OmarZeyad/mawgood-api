@@ -53,7 +53,7 @@ exports.getAllEquipment = asyncHandler(async (req, res, next) => {
     mongooseQuery = mongooseQuery.sort('pricePerProbe.from')
   }
 
-  // add limiting and pagination
+  // limiting and pagination
   const page = parseInt(req.query.page) || 1
   const limit = parseInt(req.query.limit) || 10
 
